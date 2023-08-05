@@ -1,13 +1,24 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * The class responsible for displaying the main menu and handling user input.
+ */
 public class MainMenu {
     private Scanner scanner;
 
+    /**
+     * Constructs a new MainMenu object and initializes the scanner for user input.
+     */
     public MainMenu() {
         scanner = new Scanner(System.in);
     }
 
+    /**
+     * Displays the main menu options and waits for the user to make a choice.
+     *
+     * @return The user's choice as an integer.
+     */
     public int showMenu() {
         System.out.println("Main Menu:");
         System.out.println("1. Start Game");
@@ -23,6 +34,11 @@ public class MainMenu {
         }
     }
 
+    /**
+     * Displays the options menu and allows the user to modify player symbols.
+     *
+     * @param useCase The TicTacToeUseCase instance to update player symbols.
+     */
     public void showOptions(TicTacToeUseCase useCase) {
         System.out.println("Options:");
         System.out.println("Current X Symbol: " + useCase.getXSymbol());
@@ -40,10 +56,16 @@ public class MainMenu {
         }
     }
 
+    /**
+     * Displays a message for an invalid menu choice made by the user.
+     */
     public void showInvalidChoice() {
         System.out.println("Invalid choice. Please select a valid option.");
     }
 
+    /**
+     * Displays instructions on how to play Tic-Tac-Toe.
+     */
     public void showHowToPlay() {
         System.out.println("How to Play Tic-Tac-Toe:");
         System.out.println("1. The game is played on a 3x3 grid.");
@@ -51,10 +73,16 @@ public class MainMenu {
         System.out.println("3. The first player to get three of their symbols in a row, column, or diagonal wins.");
     }
 
+    /**
+     * Displays an exit message when the player chooses to exit the game.
+     */
     public void showExitMessage() {
         System.out.println("Thank you for playing!");
     }
 
+    /**
+     * Closes the scanner used for user input.
+     */
     public void closeScanner() {
         scanner.close();
     }

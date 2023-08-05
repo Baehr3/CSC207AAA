@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+/**
+ * The TicTacToeViewTest class contains unit tests for the TicTacToeView class.
+ */
 public class TicTacToeViewTest {
     private TicTacToeView ticTacToeView;
     private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -15,10 +18,10 @@ public class TicTacToeViewTest {
         System.setOut(new PrintStream(outputStream));
     }
 
-    private String removeCarriageReturns(String input) {
-        return input.replaceAll("\r", "");
-    }
-
+    /**
+     * Test case to verify the displayBoard() method of the TicTacToeView class.
+     * The test sets up a game board with specific symbols and checks if the correct board layout is displayed.
+     */
     @Test
     public void testDisplayBoard() {
         // Given
@@ -43,6 +46,10 @@ public class TicTacToeViewTest {
         Assertions.assertEquals(removeCarriageReturns(expectedOutput), removeCarriageReturns(outputStream.toString()));
     }
 
+    /**
+     * Test case to verify the showWinner() method of the TicTacToeView class.
+     * The test provides the current player and checks if the correct message for the winner is displayed.
+     */
     @Test
     public void testShowWinner() {
         // Given
@@ -56,6 +63,10 @@ public class TicTacToeViewTest {
         Assertions.assertEquals(removeCarriageReturns(expectedOutput), removeCarriageReturns(outputStream.toString()));
     }
 
+    /**
+     * Test case to verify the showDraw() method of the TicTacToeView class.
+     * The test checks if the correct message for a draw game is displayed.
+     */
     @Test
     public void testShowDraw() {
         // Given
@@ -68,6 +79,10 @@ public class TicTacToeViewTest {
         Assertions.assertEquals(removeCarriageReturns(expectedOutput), removeCarriageReturns(outputStream.toString()));
     }
 
+    /**
+     * Test case to verify the showInvalidMove() method of the TicTacToeView class.
+     * The test checks if the correct message for an invalid move is displayed.
+     */
     @Test
     public void testShowInvalidMove() {
         // Given
@@ -78,5 +93,15 @@ public class TicTacToeViewTest {
 
         // Then
         Assertions.assertEquals(removeCarriageReturns(expectedOutput), removeCarriageReturns(outputStream.toString()));
+    }
+
+    /**
+     * Helper method to remove carriage returns from a string for consistent output comparison.
+     *
+     * @param input The input string to remove carriage returns from.
+     * @return The modified string without carriage returns.
+     */
+    private String removeCarriageReturns(String input) {
+        return input.replaceAll("\r", "");
     }
 }
