@@ -25,6 +25,14 @@ Steps 5 to 7 repeat until there is a winner or a draw.
 The game displays the result: "Player X wins," "Player O wins," or "It's a draw."
 The Player is given the option to play again or exit the game.
 
+## Design Patterns Used
+### Observer
+An Observer is used and implemented by the view so the UseCase update the view, Observer.update() is called
+and the view will update the game board and display it.
+
+### MVC
+An MVC pattern was used where TicTacToeUseCase is the Model, TicTacToeView is the the view, and TicTacToeController is the controller
+
 ## Remaining Code Smells, Violations of CA/SOLID
 ### Code Smells
 Long Method - TicTacToeController.playGame() is a long method that is difficult to fix it has nested if statements 
